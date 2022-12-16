@@ -19,7 +19,7 @@ const port = process.env.PORT || 8080;
 
 app.use(express.json()); // JSON형식의 데이터를 처리할 수 있도록 함.
 app.use(cors()); // 모든 브라우저에서 내 서버로 요청 가능
-app.use("/uploads", express.static("uploads"));
+app.use("./uploads", express.static("uploads"));
 
 app.get("/banners", (req, res) => {
   models.Banner.findAll({
